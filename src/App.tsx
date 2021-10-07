@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 import { useFetch } from './hooks/useFetch'
 import lock_black_24dp from './assets/lock_black_24dp.svg'
+import PaymentItem from './ui/payment/paymentItem'
 
 function App() {
 	// const [toggle, setToggle] = useState(false)
@@ -22,17 +23,7 @@ function App() {
 					{error && <p>Oups, une erreur s'est produite</p>}
 
 					{data?.payments.map((payment: any) => {
-						return (
-							<div className='payment' key={payment?.invoiceNumber}>
-								<input type='checkbox' />
-								<div className='infos'>
-									<h3>{payment.invoiceNumber}</h3>
-									<p>A régler avant le {payment.sentDate}</p>
-								</div>
-								<div className='options'></div>
-								<div className='price'>{payment.amount}</div>
-							</div>
-						)
+						return <PaymentItem payment={payment} />
 					})}
 				</div>
 				<div className='card-footer'>
