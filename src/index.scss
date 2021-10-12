@@ -57,6 +57,10 @@ body {
 		background: var(--light-grey);
 	}
 
+	&.payed {
+		grid-template-columns: 1fr 1fr 90px;
+	}
+
 	h3 {
 		font-size: 1rem;
 	}

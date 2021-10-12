@@ -28,7 +28,7 @@ export default function PaymentOptions({ discount, multiPaymentStatus }: any) {
 							? `Appliqué${discount ? 's' : ''}`
 							: `${
 									multiPaymentStatus === PAYMENT_STATUS.AVAILABLE
-										? 'Disponible et '
+										? 'Disponible '
 										: ''
 							  }${displayDiscount()}`}
 					</p>
