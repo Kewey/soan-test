@@ -1,0 +1,71 @@
+.backdrop {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+	.card {
+		max-width: 555px;
+	}
+
+	.btn-close {
+		background: transparent;
+		border: none;
+		padding: 6px;
+		position: absolute;
+		right: 30px;
+		top: 30px;
+	}
+
+	h2 {
+		font-size: 32px;
+		margin-bottom: 50px;
+	}
+
+	.alert {
+		&-light {
+			padding: 10px 20px;
+			border-radius: 6px;
+			text-align: center;
+			background: var(--light-grey);
+		}
+	}
+
+	form {
+		margin-top: 50px;
+
+		label {
+			display: block;
+			margin-bottom: 10px;
+
+			> span {
+				color: #e1280c;
+			}
+		}
+
+		input {
+			width: 100%;
+			padding: 12px 20px;
+			border-radius: 3px;
+			border: 1px solid #d2d4d4;
+			margin-bottom: 15px;
+		}
+
+		> div {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+		}
+	}
+
+	.card-footer {
+		.btn-secondary {
+			padding: 10px;
+			margin-right: 10px;
+			font-weight: bold;
+			background: transparent;
+			border: none;
+		}
+	}
+}
