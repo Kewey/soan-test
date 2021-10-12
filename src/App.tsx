@@ -25,10 +25,6 @@ function App() {
 		return item
 	})
 
-	const totalAmount = waiting?.reduce((prev: number, current: any) => {
-		return prev + parseInt(current.amount)
-	}, 0)
-
 	if (error) {
 		return <div>Error</div>
 	}
@@ -44,7 +40,7 @@ function App() {
 							className='menu-item '
 							activeClassName='active'
 						>
-							<span>Factures à player</span>
+							<span>Factures à payer</span>
 						</NavLink>
 						<NavLink
 							exact
@@ -59,10 +55,10 @@ function App() {
 					{isLoading && <p>Chargement</p>}
 					<Switch>
 						<Route path='/payed'>
-							<PaymentScreen list={payed} />
+							<PaymentScreen list={payed} payed />
 						</Route>
 						<Route path='/'>
-							<PaymentScreen list={waiting} amount={totalAmount} />
+							<PaymentScreen list={waiting} />
 						</Route>
 					</Switch>
 				</div>
