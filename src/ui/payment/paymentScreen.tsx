@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { toEuro } from '../../utils/toEuro'
+import Modal from '../modal/modal'
 import PaymentItem from './paymentItem'
 
 export default function PaymentScreen({ list, payed }: any) {
@@ -45,7 +46,12 @@ export default function PaymentScreen({ list, payed }: any) {
 
 			{!payed && (
 				<div className='card-footer'>
-					<button className='btn'>Payer {toEuro(totalAmount)}</button>
+					<Modal
+						amount={totalAmount}
+						trigger={
+							<button className='btn'>Payer {toEuro(totalAmount)}</button>
+						}
+					/>
 				</div>
 			)}
 		</>
