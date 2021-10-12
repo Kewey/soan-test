@@ -21,11 +21,7 @@ export default function Modal({
 	trigger: ReactElement
 	amount: number
 }) {
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	} = useForm<FormData>()
+	const { register, handleSubmit } = useForm<FormData>()
 	const onSubmit = handleSubmit((data) => console.log(data))
 
 	return (
