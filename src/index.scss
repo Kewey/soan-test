@@ -39,6 +39,7 @@ body {
 
 .card-head {
 	display: flex;
+	margin-bottom: 50px;
 }
 
 .card-body {
@@ -151,5 +152,20 @@ body {
 	svg {
 		user-select: none;
 		stroke: var(--white);
+	}
+}
+
+.menu-item {
+	padding: 10px 19px;
+	border-bottom: 2px solid var(--light-grey);
+	text-decoration: none;
+
+	> span {
+		color: var(--dark);
+		font-weight: 600;
+	}
+
+	&.active {
+		border-bottom: 2px solid var(--dark);
 	}
 }

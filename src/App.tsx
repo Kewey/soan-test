@@ -1,6 +1,11 @@
 // import { useState } from 'react'
 import './index.scss'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	NavLink,
+} from 'react-router-dom'
 import lock_black_24dp from './assets/lock_black_24dp.svg'
 import PaymentScreen from './ui/payment/paymentScreen'
 import { useFetch } from './hooks/useFetch'
@@ -24,8 +29,6 @@ function App() {
 		return prev + parseInt(current.amount)
 	}, 0)
 
-	console.log(`totalAmount`, totalAmount)
-
 	if (error) {
 		return <div>Error</div>
 	}
@@ -35,8 +38,22 @@ function App() {
 			<div className='container'>
 				<div className='card'>
 					<div className='card-head'>
-						<Link to='/'>Factures à player</Link>
-						<Link to='/payed'>Facture payées</Link>
+						<NavLink
+							exact
+							to='/'
+							className='menu-item '
+							activeClassName='active'
+						>
+							<span>Factures à player</span>
+						</NavLink>
+						<NavLink
+							exact
+							to='/payed'
+							className='menu-item '
+							activeClassName='active'
+						>
+							<span>Facture payées</span>
+						</NavLink>
 					</div>
 
 					{isLoading && <p>Chargement</p>}
