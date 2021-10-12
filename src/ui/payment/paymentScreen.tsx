@@ -10,9 +10,12 @@ export default function PaymentScreen({ list, amount }: any) {
 					return <PaymentItem payment={payment} key={payment.invoiceNumber} />
 				})}
 			</div>
-			<div className='card-footer'>
-				<button className='btn'>Payer {toEuro(amount)}</button>
-			</div>
+
+			{amount && (
+				<div className='card-footer'>
+					<button className='btn'>Payer {toEuro(amount)}</button>
+				</div>
+			)}
 		</>
 	)
 }

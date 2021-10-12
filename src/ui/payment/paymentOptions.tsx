@@ -25,10 +25,12 @@ export default function PaymentOptions({ discount, multiPaymentStatus }: any) {
 					</p>
 					<p>
 						{multiPaymentStatus === PAYMENT_STATUS.USED
-							? 'Appliqué'
-							: multiPaymentStatus === PAYMENT_STATUS.AVAILABLE
-							? 'Disponible ' + displayDiscount()
-							: '' + displayDiscount()}
+							? `Appliqué${discount ? 's' : ''}`
+							: `${
+									multiPaymentStatus === PAYMENT_STATUS.AVAILABLE
+										? 'Disponible et '
+										: ''
+							  }${displayDiscount()}`}
 					</p>
 				</div>
 			)}
